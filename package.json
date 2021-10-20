@@ -1,0 +1,19 @@
+{
+  "name": "@spore/tskit",
+  "version": "0.0.1",
+  "description": "TypeScript 基础工具组件库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SporeUI/spore-tskit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SporeUI/spore-tskit/issues"
+  },
+  "homepage": "https://github.com/SporeUI/spore-tskit#readme"
+}
