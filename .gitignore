@@ -1,3 +1,12 @@
+*.lock
+package-lock.json
+ignore
+dist
+docs-dist
+docs/docs.md
+docs/.vuepress/public/js/spore-tskit.js
+docs/.vuepress/public/js/spore-tskit.min.js
+
 # Logs
 logs
 *.log
