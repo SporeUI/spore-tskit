@@ -4,7 +4,14 @@
   "description": "TypeScript 基础工具组件库",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "vuepress-dev": "vuepress dev docs",
+    "vuepress-build": "vuepress build docs",
+    "doc-build": "documentation build ./index.js -f md -o ./docs/docs.md --markdown-toc false --np",
+    "doc": "npm run test && npm run doc-build && npm run vuepress-build",
+    "prepublishOnly": "npm run build",
+    "test": "jest --coverage ./test/unit",
+    "lint": "eslint ./src",
+    "cz": "git add . && git cz"
   },
   "publishConfig": {
     "access": "public"
@@ -17,8 +24,6 @@
     "url": "https://github.com/SporeUI/spore-tskit/issues"
   },
   "homepage": "https://github.com/SporeUI/spore-tskit#readme",
-  "author": "pillar0514@gmail.com",
-  "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.21"
   },
@@ -33,5 +38,26 @@
     "husky": "^7.0.4",
     "jest": "^27.3.1",
     "lint-staged": "^11.2.3"
-  }
+  },
+  "lint-staged": {
+    "src/**/*.js": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "./hooks/pre-commit.sh && lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "author": "pillar0514@gmail.com",
+  "license": "MIT"
 }
