@@ -1,33 +1,24 @@
-/**
- * 如果觉得规则不合适, 可以在rules中对规则进行覆盖
- * 配置规则 http://eslint.org/docs/user-guide/configuring (可切换为中文)
- * "off" or 0 - turn the rule off
- * "warn" or 1 - turn the rule on as a warning (doesn’t affect exit code)
- * "error" or 2 - turn the rule on as an error (exit code is 1 when triggered)
- */
+// https://github.com/AlloyTeam/eslint-config-alloy
 
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
-  parserOptions: {
-    ecmaVersion: 5,
-    sourceType: 'module',
-  },
   env: {
-    browser: true,
     jest: true,
+    browser: true,
+    es6: true,
+    node: true,
   },
-  extends: [
-    'airbnb-base',
-  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: './tsconfig.json'
+  },
   plugins: [
-    'html',
     'jest',
     'no-for-of-loops',
+    '@typescript-eslint',
   ],
-  globals: {
-    page: true,
-    browser: true,
-    console: true,
-  }
+  extends: [
+    'airbnb-base',
+    'airbnb-typescript/base'
+  ]
 };
