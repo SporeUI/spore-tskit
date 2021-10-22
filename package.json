@@ -12,6 +12,7 @@
     "test": "jest --coverage ./test/unit",
     "lint": "eslint ./src",
     "lint:test": "eslint ./test",
+    "husky-prepare": "husky install",
     "cz": "git add . && git cz"
   },
   "publishConfig": {
