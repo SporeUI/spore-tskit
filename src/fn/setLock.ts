@@ -18,14 +18,14 @@ export function setLock(
   fn: Function,
   delay: number,
 ) {
-  let timer: TypeTimeout = null;
+  let timer: TypeTimeout = null
   return (...args: unknown[]) => {
     if (timer) return;
     timer = setTimeout(() => {
-      timer = null;
+      timer = null
     }, delay);
     if (typeof fn === 'function') {
-      fn(...args);
+      fn(...args)
     }
   };
 }
