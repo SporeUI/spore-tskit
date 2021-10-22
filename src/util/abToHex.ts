@@ -12,13 +12,16 @@
  * abToHex(ab); // => 'abcd'
  */
 
+function iterator(bit: number): string {
+  return (`00${bit.toString(16)}`).slice(-2);
+}
+
 export function abToHex(buffer: ArrayBuffer): string {
   if (Object.prototype.toString.call(buffer) !== '[object ArrayBuffer]') {
     return '';
   }
-  var u8arr = new Uint8Array(buffer);
-  var fn = function (bit) {
-    return ('00' + bit.toString(16)).slice(-2);
-  };
-  return Array.prototype.map.call(u8arr, fn).join('');
+  const u8arr = new Uint8Array(buffer);
+  return Array.prototype.map.call(u8arr, iterator).join('');
 }
+
+export default abToHex;

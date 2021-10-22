@@ -1,2 +1,2 @@
-export { byteLength } from './byteLength';
-export { dbcToSbc } from './dbcToSbc';
+export * from './byteLength';
+export * from './dbcToSbc';
