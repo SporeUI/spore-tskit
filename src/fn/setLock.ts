@@ -14,8 +14,6 @@
  * // 之后连续按键，仅在 500ms 结束后再次按键，才会再次触发事件函数调用
  */
 
-import { TypeTimeout } from '../types';
-
 export function setLock(
   fn: Function,
   delay: number,
