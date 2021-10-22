@@ -31,5 +31,3 @@ export function setLock(
     }
   };
 }
-
-export default setLock;
