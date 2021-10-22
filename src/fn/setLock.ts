@@ -4,7 +4,6 @@
  * @method fn/setLock
  * @param {Function} fn 要延迟触发的函数
  * @param {Number} delay 延迟时间(ms)
- * @param {Object} [bind] 函数的 this 指向
  * @returns {Function} 经过包装的冷却触发函数
  * @example
  * import { setLock } from '@spore-ui/tskit';
@@ -15,19 +14,22 @@
  * // 之后连续按键，仅在 500ms 结束后再次按键，才会再次触发事件函数调用
  */
 
-export function setLock(fn, delay, bind) {
-  var timer = null;
-  return function () {
-    if (timer) {
-      return;
-    }
-    bind = bind || this;
-    var args = arguments;
-    timer = setTimeout(function () {
+import { TypeTimeout } from '../types';
+
+export function setLock(
+  fn: Function,
+  delay: number,
+) {
+  let timer: TypeTimeout = null;
+  return (...args: unknown[]) => {
+    if (timer) return;
+    timer = setTimeout(() => {
       timer = null;
     }, delay);
     if (typeof fn === 'function') {
-      fn.apply(bind, args);
+      fn(...args);
     }
   };
 }
+
+export default setLock;
