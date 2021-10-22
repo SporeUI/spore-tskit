@@ -8,4 +8,3 @@ if [ "main" == "$branch" ]; then
 fi
 
 npx lint-staged
-

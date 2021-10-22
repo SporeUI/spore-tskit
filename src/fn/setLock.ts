@@ -14,18 +14,22 @@
  * // 之后连续按键，仅在 500ms 结束后再次按键，才会再次触发事件函数调用
  */
 
+import { TypeTimeout } from '../types';
+
 export function setLock(
   fn: Function,
   delay: number,
 ) {
-  let timer: TypeTimeout = null
+  let timer: TypeTimeout = null;
   return (...args: unknown[]) => {
     if (timer) return;
     timer = setTimeout(() => {
-      timer = null
+      timer = null;
     }, delay);
     if (typeof fn === 'function') {
-      fn(...args)
+      fn(...args);
     }
   };
 }
+
+export default setLock;
