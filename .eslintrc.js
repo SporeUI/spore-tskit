@@ -1,5 +1,3 @@
-// https://github.com/AlloyTeam/eslint-config-alloy
-
 module.exports = {
   root: true,
   env: {
@@ -10,7 +8,7 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './tsconfig.json'
+    project: 'tsconfig.eslint.json'
   },
   plugins: [
     'jest',

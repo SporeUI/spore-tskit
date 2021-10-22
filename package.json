@@ -11,6 +11,7 @@
     "prepublishOnly": "npm run build",
     "test": "jest --coverage ./test/unit",
     "lint": "eslint ./src",
+    "lint:test": "eslint ./test",
     "cz": "git add . && git cz"
   },
   "publishConfig": {
@@ -39,6 +40,8 @@
     "eslint": "^8.0.1",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-airbnb-typescript": "^14.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jest": "^25.2.2",
     "eslint-plugin-no-for-of-loops": "^1.0.1",
     "husky": "^7.0.4",
     "jest": "^27.3.1",
@@ -47,7 +50,8 @@
     "vuepress": "^1.8.2"
   },
   "lint-staged": {
-    "src/**/*.js": "eslint"
+    "src/**/*.ts": "eslint",
+    "test/**/*.js": "eslint"
   },
   "husky": {
     "hooks": {
