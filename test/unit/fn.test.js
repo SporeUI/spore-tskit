@@ -1,7 +1,7 @@
 import {
   delay,
   setLock,
-} from '../../lib'
+} from '../../src/index';
 
 describe('fn/setLock', () => {
   test('冷却状态下函数不执行', async () => {

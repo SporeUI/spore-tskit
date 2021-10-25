@@ -14,6 +14,7 @@
     "watch": false
   },
   "include": [
+    "./*.js",
     "src",
     "test"
   ],
