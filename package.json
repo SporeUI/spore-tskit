@@ -2,8 +2,9 @@
   "name": "@spore/tskit",
   "version": "0.0.2",
   "description": "TypeScript 基础工具组件库",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "npm run compile",
     "compile": "tsc",
     "vuepress-dev": "vuepress dev docs",
     "vuepress-build": "vuepress build docs",
@@ -61,6 +62,11 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "files": [
+    "dist",
+    "lib",
+    "src"
+  ],
   "author": "pillar0514@gmail.com",
   "license": "MIT"
 }

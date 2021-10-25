@@ -1,1 +1,0 @@
-{"version":3,"file":"delay.js","sourceRoot":"","sources":["../../src/time/delay.ts"],"names":[],"mappings":";;;AAAA;;;;;;;;;;;GAWG;AACH,SAAgB,KAAK,CAAC,IAAY;IAChC,OAAO,IAAI,OAAO,CAAC,UAAC,OAAO;QACzB,UAAU,CAAC,OAAO,EAAE,IAAI,CAAC,CAAC;IAC5B,CAAC,CAAC,CAAC;AACL,CAAC;AAJD,sBAIC;AAED,kBAAe,KAAK,CAAC"}
