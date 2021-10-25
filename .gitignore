@@ -5,6 +5,7 @@ lib
 dist
 docs-dist
 docs/docs.md
+docs/index.md
 docs/.vuepress/public/js/spore-tskit.js
 docs/.vuepress/public/js/spore-tskit.min.js
 

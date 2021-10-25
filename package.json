@@ -1,6 +1,6 @@
 {
   "name": "@spore/tskit",
-  "version": "0.0.2",
+  "version": "0.0.0-development",
   "description": "TypeScript 基础工具组件库",
   "main": "lib/index.js",
   "scripts": {
@@ -9,7 +9,8 @@
     "vuepress-dev": "vuepress dev docs",
     "vuepress-build": "vuepress build docs",
     "doc-build": "documentation build ./src/index.ts -f md -o ./docs/docs.md --markdown-toc false --np",
-    "doc": "npm run test && npm run doc-build && npm run vuepress-build",
+    "cp": "cp ./README.md docs/index.md",
+    "doc": "npm run test && npm run doc-build && npm run cp && npm run vuepress-build",
     "prepublishOnly": "npm run build",
     "test": "jest --coverage ./test/unit",
     "lint": "eslint ./src",
