@@ -1,11 +1,17 @@
 {
-  "name": "@spore/tskit",
+  "name": "@spore-ui/tskit",
   "version": "0.0.0-development",
   "description": "TypeScript 基础工具组件库",
-  "main": "lib/index.js",
+  "main": "es5/index.js",
+  "exports": {
+    "require": "./es5/index.js",
+    "import": "./es6/index.js"
+  },
   "scripts": {
     "build": "npm run compile",
-    "compile": "tsc",
+    "compile": "npm run compile-es5 && npm run compile-es6",
+    "compile-es5": "tsc",
+    "compile-es6": "tsc --module es6 --target es6 --outDir es6",
     "vuepress-dev": "vuepress dev docs",
     "vuepress-build": "vuepress build docs",
     "doc-build": "documentation build ./src/index.ts -f md -o ./docs/docs.md --markdown-toc false --np",
@@ -56,7 +62,8 @@
     "lint-staged": "^11.2.3",
     "ts-jest": "^27.0.7",
     "typescript": "^4.4.4",
-    "vuepress": "^1.8.2"
+    "vuepress": "^1.8.2",
+    "webpack": "^4.46.0"
   },
   "config": {
     "commitizen": {
