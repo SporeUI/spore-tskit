@@ -5,7 +5,9 @@
   "main": "es5/index.js",
   "scripts": {
     "build": "npm run compile",
-    "compile": "tsc",
+    "compile": "npm run compile-es5 && npm run compile-es6",
+    "compile-es5":  "tsc",
+    "compile-es6":  "tsc --target es6 --module es6 --outDir ./es6",
     "vuepress-dev": "vuepress dev docs",
     "vuepress-build": "vuepress build docs",
     "doc-build": "documentation build ./src/index.ts -f md -o ./docs/docs.md --markdown-toc false --np",
@@ -66,7 +68,8 @@
   },
   "files": [
     "dist",
-    "lib",
+    "es5",
+    "es6",
     "src"
   ],
   "author": "pillar0514@gmail.com",
