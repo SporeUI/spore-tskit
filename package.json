@@ -2,7 +2,7 @@
   "name": "@spore-ui/tskit",
   "version": "0.0.0-development",
   "description": "TypeScript 基础工具组件库",
-  "main": "es5/index.js",
+  "main": "es6/index.js",
   "scripts": {
     "build": "npm run compile",
     "compile": "npm run compile-es5 && npm run compile-es6",
@@ -23,6 +23,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SporeUI/spore-tskit.git"
