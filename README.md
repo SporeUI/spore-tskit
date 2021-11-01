@@ -30,6 +30,10 @@ npm i @spore-ui/tskit
 ```javascript
 // 引入一个方法
 import { delay } from '@spore-ui/tskit';
+
+// 引入支持 es5 的代码
+// 注意这种方式会导致 tree-shaking 失效
+import { delay } from '@spore-ui/tskit/es5';
 ```
 
 ## 测试
