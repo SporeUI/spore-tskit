@@ -2,8 +2,10 @@
   "name": "@spore-ui/tskit",
   "version": "0.0.0-development",
   "description": "TypeScript 基础工具组件库",
-  "main": "es6/index.js",
+  "main": "es5/index.js",
+  "module": "es6/index.js",
   "scripts": {
+    "prepare": "husky install",
     "build": "npm run compile",
     "compile": "npm run compile-es5 && npm run compile-es6",
     "compile-es5":  "tsc",
