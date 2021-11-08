@@ -30,6 +30,10 @@ module.exports = {
         title: '参考文档',
         path: '/docs',
       },
+      {
+        title: '推荐工具',
+        path: '/advise',
+      },
     ],
   },
   markdown: {
