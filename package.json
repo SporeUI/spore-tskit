@@ -8,8 +8,8 @@
     "prepare": "husky install",
     "build": "npm run compile",
     "compile": "npm run compile-es5 && npm run compile-es6",
-    "compile-es5":  "tsc",
-    "compile-es6":  "tsc --target es6 --module es6 --outDir ./es6",
+    "compile-es5": "tsc",
+    "compile-es6": "tsc --target es6 --module es6 --outDir ./es6",
     "vuepress-dev": "vuepress dev docs",
     "vuepress-build": "vuepress build docs",
     "doc-build": "documentation build ./es6/index.js -f md -o ./docs/docs.md --markdown-toc false --np",
@@ -35,6 +35,7 @@
   },
   "homepage": "https://github.com/SporeUI/spore-tskit#readme",
   "dependencies": {
+    "@types/lodash": "^4.14.176",
     "lodash": "^4.17.21"
   },
   "devDependencies": {

@@ -10,3 +10,6 @@
  */
 
 export * from './delay';
+export * from './getTimeSplit';
+export * from './getUTCDate';
+export * from './formatDate';

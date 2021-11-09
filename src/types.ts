@@ -9,3 +9,5 @@ export declare type TypeSimpleValue = null | undefined | string | number | boole
 export interface TypeSimpleObject {
   [key: string]: TypeSimpleValue;
 }
+
+export type TypeDate = Date | string | number;
