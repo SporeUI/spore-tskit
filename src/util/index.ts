@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /**
  * 其他工具函数
  * @module spore-ui/tskit/src/util
@@ -9,4 +10,4 @@
  * import { abToHex } from '@spore-ui/tskit/src/util/abToHex'
  */
 
-export * from './abToHex';
+export { abToHex } from './abToHex';

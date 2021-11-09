@@ -9,7 +9,8 @@
  * import { delay } from '@spore-ui/tskit/src/time/delay'
  */
 
-export * from './delay';
-export * from './getTimeSplit';
-export * from './getUTCDate';
-export * from './formatDate';
+export { delay } from './delay';
+export { formatDate } from './formatDate';
+export { getTimeSplit } from './getTimeSplit';
+export { getUTCDate } from './getUTCDate';
+export { parseUnitTime } from './parseUnitTime';

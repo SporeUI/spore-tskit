@@ -1,6 +1,7 @@
 import {
   formatDate,
   getTimeSplit,
+  parseUnitTime,
 } from '../../src/index';
 
 describe('time/formatDate', () => {
@@ -35,5 +36,16 @@ describe('time/getTimeSplit', () => {
     ).getTime();
     const expectTime = new Date('2018-1-1 00:00').getTime();
     expect(time).toBe(expectTime);
+  });
+});
+
+describe('time/parseUnitTime', () => {
+  test('parseUnitTime(12345 * 67890).day => 9', () => {
+    const udate = parseUnitTime(12345 * 67890);
+    expect(udate.day).toBe(9);
+    expect(udate.hour).toBe(16);
+    expect(udate.minute).toBe(48);
+    expect(udate.second).toBe(22);
+    expect(udate.ms).toBe(50);
   });
 });

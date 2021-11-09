@@ -36,6 +36,10 @@
 - [url-parse](https://github.com/unshiftio/url-parse) URL 解析为 Location 对象
 - [query-string](https://github.com/sindresorhus/query-string) query 解析与构造
 
+## Event
+
+- [Mitt](https://github.com/developit/mitt) 观察者模式的实现
+
 ## IO
 
 - [axios](https://axios-http.com/) 前后端通用请求库

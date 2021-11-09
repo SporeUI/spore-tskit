@@ -1,6 +1,6 @@
 /**
  * 延迟指定时间
- * @method time/delay
+ * @method delay
  * @param {Number} time 延迟时间(ms)
  * @returns {Promise<undefined>} 时间结束后的回调 Promise
  * @example

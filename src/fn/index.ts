@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /**
  * 函数工具
  * @module spore-ui/tskit/src/fn
@@ -9,4 +10,4 @@
  * import { setLock } from '@spore-ui/tskit/src/fn/setLock'
  */
 
-export * from './setLock';
+export { setLock } from './setLock';
