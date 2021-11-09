@@ -27,7 +27,7 @@ import { TypeDate } from '../types';
 
 const DAY = 24 * 60 * 60 * 1000;
 
-const TimeUnits = [
+export const TimeUnits = [
   'hour',
   'day',
   'week',
