@@ -38,7 +38,7 @@ export interface TypeTimeUnitInfo {
 
 export function parseUnitTime(
   time: TypeDate,
-  spec: TypeParseUnitTimeOptions,
+  spec?: TypeParseUnitTimeOptions,
 ): TypeTimeUnitInfo {
   const conf: TypeParseUnitTimeOptions = {
     maxUnit: 'day',

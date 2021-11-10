@@ -39,12 +39,8 @@ export type TypeTimeUnit = typeof TimeUnits[number];
 
 export function getTimeSplit(
   time: TypeDate,
-  type: TypeTimeUnit,
+  type: TypeTimeUnit = 'day',
 ): Date {
-  if (!type) {
-    throw new Error('required param type');
-  }
-
   const localTime = new Date(time).getTime();
   let utcTime = getUTCDate(time);
 

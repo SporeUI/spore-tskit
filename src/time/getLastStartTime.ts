@@ -6,8 +6,8 @@
  * @param {Number} count 多少单位时间之前
  * @returns {Date} 最近单位时间的起始时间对象
  * @example
- * var $getLastStart = require('@spore-ui/kit/packages/date/getLastStart');
- * var time = $getLastStart(
+ * import { getLastStartTime } from '@spore-ui/tskit';
+ * const time = getLastStartTime(
  *   new Date('2018-10-25'),
  *   'month',
  *   0
@@ -29,12 +29,11 @@ const enum UnitTime {
 
 export function getLastStartTime(
   time: TypeDate,
-  type: TypeTimeUnit,
-  count?: number,
+  type: TypeTimeUnit = 'day',
+  count: number = 0,
 ): Date {
   const localTime = new Date(time).getTime();
   const utcTime = getUTCDate(time);
-  const pastCount = count || 0;
 
   let stamp = utcTime;
   let year;
@@ -48,12 +47,12 @@ export function getLastStartTime(
 
   if (type === 'year') {
     year = utcTime.getUTCFullYear();
-    year -= pastCount;
+    year -= count;
     stamp = new Date(`${year}/1/1`);
   } else if (type === 'month') {
     year = utcTime.getUTCFullYear();
     month = utcTime.getUTCMonth();
-    allMonths = year * 12 + month - pastCount;
+    allMonths = year * 12 + month - count;
     year = Math.floor(allMonths / 12);
     month = allMonths - year * 12;
     month += 1;
@@ -66,7 +65,7 @@ export function getLastStartTime(
     if (type === 'week') {
       unit = 7 * UnitTime.DAY;
     }
-    const newLocalTime = localTime - pastCount * unit;
+    const newLocalTime = localTime - count * unit;
     stamp = getTimeSplit(newLocalTime, type);
   }
 

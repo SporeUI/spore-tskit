@@ -1,5 +1,7 @@
 export type TypeTimeout = ReturnType<typeof setTimeout>;
 
+export type TypeInterval = ReturnType<typeof setInterval>;
+
 export interface TypePlainObject {
   [key: string]: unknown;
 }

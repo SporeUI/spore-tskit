@@ -13,15 +13,6 @@ describe('time/formatDate', () => {
 });
 
 describe('time/getLastStartTime', () => {
-  test('必须传递 type 参数', () => {
-    let hasError = false;
-    try {
-      getLastStartTime(new Date('2018-10-25'));
-    } catch (err) {
-      hasError = true;
-    }
-    expect(hasError).toBe(true);
-  });
   test('2018-10-25 12:43:12 当天时间戳', () => {
     const time = getLastStartTime(
       new Date('2018-10-25 12:43:12'),
@@ -66,15 +57,6 @@ describe('time/getLastStartTime', () => {
 });
 
 describe('time/getTimeSplit', () => {
-  test('必须传递 type 参数', () => {
-    let hasError = false;
-    try {
-      getTimeSplit(new Date('2018-10-25'));
-    } catch (err) {
-      hasError = true;
-    }
-    expect(hasError).toBe(true);
-  });
   test('2018-10-25 当月第1天时间戳', () => {
     const time = getTimeSplit(
       '2018-10-25',
