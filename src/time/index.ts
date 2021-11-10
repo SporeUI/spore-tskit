@@ -15,3 +15,4 @@ export { getLastStartTime } from './getLastStartTime';
 export { getTimeSplit } from './getTimeSplit';
 export { getUTCDate } from './getUTCDate';
 export { parseUnitTime } from './parseUnitTime';
+export { CountDown } from './Count-Down';

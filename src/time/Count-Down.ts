@@ -40,7 +40,7 @@
  */
 
 import noop from 'lodash/noop';
-import remove from 'lodash/remove';
+import pull from 'lodash/pull';
 import {
   TypeDate,
   TypeTimeout,
@@ -75,20 +75,21 @@ export class CountDownMonitor {
   }
 
   inspect() {
-    const { timeInterval } = this;
     const now = Date.now();
     const localDelta = now - localBaseTime;
 
     if (this.queue.length > 0) {
-      // 循环当中会删除数组元素，因此需要先复制一下数组
-      this.queue.slice(0).forEach((fn) => {
+      this.queue.forEach((fn) => {
         fn(localDelta);
       });
     } else {
       clearInterval(this.timer);
-      delete this.timer;
+      this.timer = null;
     }
+  }
 
+  start() {
+    const { timeInterval } = this;
     if (!this.timer) {
       this.timer = setInterval(
         this.inspect.bind(this),
@@ -99,12 +100,11 @@ export class CountDownMonitor {
 
   add(fn: Function) {
     this.queue.push(fn);
-    this.inspect();
+    this.start();
   }
 
   remove(fn: Function) {
-    this.inspect();
-    remove(this.queue, (item) => (item === fn));
+    pull(this.queue, fn);
   }
 }
 
@@ -118,6 +118,8 @@ export class CountDown {
   interval: number;
 
   timeInterval: number;
+
+  monitor: CountDownMonitor;
 
   delta: number;
 
@@ -145,14 +147,15 @@ export class CountDown {
     this.delta = 0;
     this.curUnit = 0;
     this.timeInterval = 0;
+    this.monitor = null;
 
-    this.setTarget(conf.target);
     this.boundCheck = this.check.bind(this);
     this.start();
   }
 
   start() {
     const { conf } = this;
+    this.setTarget(conf.target);
     if (conf.base) {
       this.correct(conf.base);
     }
@@ -180,7 +183,7 @@ export class CountDown {
       monitor = new CountDownMonitor(timeInterval);
       allMonitors[prop] = monitor;
     }
-
+    this.monitor = monitor;
     monitor.add(this.boundCheck);
   }
 
@@ -192,15 +195,15 @@ export class CountDown {
       conf,
     } = this;
 
-    const delta: number = target - now;
+    this.delta = target - now;
     // 用一个更小的时间间隔来触发检查
     // 然后检测到单位间隔时间变更时再触发更新事件
     // 这样是为了解决跳秒现象
-    const unit = Math.ceil(delta / interval);
+    const unit = Math.ceil(this.delta / interval);
     if (unit !== curUnit) {
       this.curUnit = unit;
       if (typeof conf.onChange === 'function') {
-        conf.onChange(delta);
+        conf.onChange(this.delta);
       }
     }
   }
@@ -231,7 +234,7 @@ export class CountDown {
     */
   correct(serverTime: TypeDate, localTime?: TypeDate) {
     const now = localTime ? new Date(localTime).getTime() : new Date().getTime();
-    const serverDate = serverTime ? new Date(serverTime).getTime() : 0;
+    const serverDate = serverTime ? new Date(serverTime).getTime() : now;
     if (serverDate) {
       this.timeDiff = serverDate - now;
     }
@@ -258,12 +261,9 @@ export class CountDown {
     const {
       conf,
       delta,
-      timeInterval,
     } = this;
-    const prop = `${timeInterval}`;
-    const mobj = allMonitors[prop];
-    if (mobj) {
-      mobj.remove(this.boundCheck);
+    if (this.monitor) {
+      this.monitor.remove(this.boundCheck);
     }
     // onStop事件触发必须在从队列移除回调之后
     // 否则循环接替的定时器会引发死循环

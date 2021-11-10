@@ -1,8 +1,10 @@
 import {
+  delay,
   formatDate,
   getLastStartTime,
   getTimeSplit,
   parseUnitTime,
+  CountDown,
 } from '../../src/index';
 
 describe('time/formatDate', () => {
@@ -83,5 +85,114 @@ describe('time/parseUnitTime', () => {
     expect(udate.minute).toBe(48);
     expect(udate.second).toBe(22);
     expect(udate.ms).toBe(50);
+  });
+});
+
+describe('time/CountDown', () => {
+  test('提供定时触发能力', (done) => {
+    const target = Date.now() + 150;
+    let step = 0;
+    const cd = new CountDown({
+      target,
+      interval: 50,
+      onChange(delta) {
+        expect(typeof delta).toBe('number');
+        step += 1;
+      },
+      onStop(delta) {
+        expect(step).toBe(4);
+        expect(delta).toBeLessThanOrEqual(0);
+        setTimeout(() => {
+          expect(cd.monitor.timer).toBe(null);
+          done();
+        }, 100);
+      },
+    });
+  });
+
+  test('定时器可提前终止', (done) => {
+    const target = Date.now() + 250;
+    let step = 0;
+    const cd = new CountDown({
+      target,
+      interval: 50,
+      onChange(delta) {
+        expect(typeof delta).toBe('number');
+        step += 1;
+      },
+      onStop(delta) {
+        expect(step).toBe(3);
+        expect(delta).toBeGreaterThanOrEqual(100);
+        done();
+      },
+    });
+    setTimeout(() => {
+      cd.stop();
+    }, 120);
+  });
+
+  test('销毁定时器，不会执行后续回调', (done) => {
+    const target = Date.now() + 250;
+    let step = 0;
+    let stopCalled = false;
+    const cd = new CountDown({
+      target,
+      interval: 50,
+      onChange(delta) {
+        expect(typeof delta).toBe('number');
+        step += 1;
+      },
+      onStop() {
+        stopCalled = true;
+      },
+    });
+    setTimeout(() => {
+      cd.destroy();
+      setTimeout(() => {
+        expect(step).toBe(3);
+        expect(stopCalled).toBe(false);
+        done();
+      }, 50);
+    }, 120);
+  });
+
+  test('设置服务器时间可以校准定时器', (done) => {
+    const target = Date.now() + 150;
+    let step = 0;
+    const cd = new CountDown({
+      base: Date.now() + 60,
+      target,
+      interval: 50,
+      onChange() {
+        step += 1;
+      },
+      async onStop() {
+        expect(step).toBe(3);
+        await delay(100);
+        expect(cd.monitor.timer).toBe(null);
+        done();
+      },
+    });
+  });
+
+  test('可重设目标时间', (done) => {
+    let step = 0;
+    const now = Date.now();
+    const target1 = now + 150;
+    const target2 = now + 250;
+    const cd = new CountDown({
+      target: target1,
+      interval: 50,
+      onChange() {
+        step += 1;
+      },
+      onStop() {
+        expect(step).toBe(6);
+        done();
+      },
+    });
+    setTimeout(() => {
+      cd.setTarget(target2);
+    }, 50);
   });
 });
