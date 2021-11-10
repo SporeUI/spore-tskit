@@ -21,4 +21,8 @@ module.exports = {
     '/node_modules/',
     '.history',
   ],
+  setupFiles: [
+    './test/mocks/env.js',
+    './test/mocks/client.js',
+  ],
 };
