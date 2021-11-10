@@ -37,6 +37,10 @@
 - [url-parse](https://github.com/unshiftio/url-parse) URL 解析为 Location 对象
 - [query-string](https://github.com/sindresorhus/query-string) query 解析与构造
 
+## Dom
+
+- [document-offset](https://github.com/timoxley/offset) 获取元素位置与尺寸
+
 ## Event
 
 - [Mitt](https://github.com/developit/mitt) 观察者模式的实现
