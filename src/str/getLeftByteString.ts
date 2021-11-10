@@ -4,7 +4,7 @@
  * @method getLeftByteString
  * @param {String} str
  * @param {Number} lens
- * @returns {String} str
+ * @return {String} str
  * @example
  * import { getLeftByteString } from '@spore-ui/tskit';
  * //向汉编致敬

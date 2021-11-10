@@ -6,3 +6,11 @@
  */
 
 export { abToHex } from './abToHex';
+export { ascToHex } from './ascToHex';
+export { getType } from './getType';
+export { hexToAb } from './hexToAb';
+export { hexToAsc } from './hexToAsc';
+export { hslToRgb } from './hslToRgb';
+export { measureDistance } from './measureDistance';
+export { occurInside } from './occurInside';
+export { rgbToHsl } from './rgbToHsl';

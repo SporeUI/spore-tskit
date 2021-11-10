@@ -3,7 +3,7 @@
  * @method getTimeSplit
  * @param {Number|Date} time 实际时间
  * @param {String} type 单位时间类型，可选 ['year', 'month', 'week', 'day', 'hour']
- * @returns {Date} 时间整点对象
+ * @return {Date} 时间整点对象
  * @example
  * import { getTimeSplit } from '@spore-ui/tskit';
  * new Date(

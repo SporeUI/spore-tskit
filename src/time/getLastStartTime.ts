@@ -4,7 +4,7 @@
  * @param {Number|Date} time 实际时间
  * @param {String} type 单位时间类型，可选 ['year', 'month', 'week', 'day', 'hour']
  * @param {Number} count 多少单位时间之前
- * @returns {Date} 最近单位时间的起始时间对象
+ * @return {Date} 最近单位时间的起始时间对象
  * @example
  * import { getLastStartTime } from '@spore-ui/tskit';
  * const time = getLastStartTime(

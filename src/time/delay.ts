@@ -2,7 +2,7 @@
  * 延迟指定时间
  * @method delay
  * @param {Number} time 延迟时间(ms)
- * @returns {Promise<undefined>} 时间结束后的回调 Promise
+ * @return {Promise<undefined>} 时间结束后的回调 Promise
  * @example
  * import { delay } from '@spore-ui/tskit';
  * const fn = async () {

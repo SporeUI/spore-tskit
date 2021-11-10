@@ -4,7 +4,7 @@
  * @method setLock
  * @param {Function} fn 要延迟触发的函数
  * @param {Number} delay 延迟时间(ms)
- * @returns {Function} 经过包装的冷却触发函数
+ * @return {Function} 经过包装的冷却触发函数
  * @example
  * import { setLock } from '@spore-ui/tskit';
  * $('#input').keydown(setLock(() => {

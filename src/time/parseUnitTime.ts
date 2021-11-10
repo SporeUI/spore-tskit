@@ -4,7 +4,7 @@
  * @param {Number} time 毫秒数
  * @param {Object} spec 选项
  * @param {String} [spec.maxUnit='day'] 拆分时间的最大单位，可选 ['day', 'hour', 'minute', 'second']
- * @returns {Object} 拆分完成的天时分秒
+ * @return {Object} 拆分完成的天时分秒
  * @example
  * import { parseUnitTime } from '@spore-ui/tskit';
  * console.info( parseUnitTime(12345 * 67890) );
