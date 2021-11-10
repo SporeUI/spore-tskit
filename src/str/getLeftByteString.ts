@@ -16,13 +16,14 @@ import { byteLength } from './byteLength';
 export function getLeftByteString(str: string, lens: number): string {
   const proxyStr = str.replace(/\*/g, ' ')
     .replace(/[^\x00-\xff]/g, '**');
-  let opStr = str.slice(0, proxyStr.slice(0, lens)
+  const proxyLength = proxyStr.slice(0, lens)
     .replace(/\*\*/g, ' ')
-    .replace(/\*/g, '').length);
-  if (byteLength(opStr) > lens && lens > 0) {
-    opStr = opStr.slice(0, opStr.length - 1);
+    .replace(/\*/g, '').length;
+  let rs = str.slice(0, proxyLength);
+  if (byteLength(rs) > lens && lens > 0) {
+    rs = rs.slice(0, rs.length - 1);
   }
-  return str;
+  return rs;
 }
 
 export default getLeftByteString;

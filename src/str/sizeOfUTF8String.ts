@@ -8,7 +8,7 @@
  * sizeOfUTF8String('中文c'); //return 7
 */
 
-function sizeOfUTF8String(str: string): number {
+export function sizeOfUTF8String(str: string): number {
   return (
     typeof Buffer !== 'undefined'
       ? Buffer.from(str, 'utf8').length
@@ -16,4 +16,4 @@ function sizeOfUTF8String(str: string): number {
   );
 }
 
-module.exports = sizeOfUTF8String;
+export default sizeOfUTF8String;

@@ -9,9 +9,9 @@
  */
 import { TypeDate } from '../types';
 
-function getTime36(date: TypeDate): string {
-  const dvalue = date ? new Date(date).getTime : new Date().getTime();
+export function getTime36(date?: TypeDate): string {
+  const dvalue = date ? new Date(date).getTime() : new Date().getTime();
   return dvalue.toString(36);
 }
 
-module.exports = getTime36;
+export default getTime36;

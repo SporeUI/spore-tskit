@@ -8,7 +8,7 @@
  * getRnd36(0.5810766832590446); // 'kx2pozz9rgf'
  */
 
-export function getRnd36(rnd: number): string {
+export function getRnd36(rnd?: number): string {
   const rndigit = rnd || Math.random();
   return rndigit.toString(36).replace(/^0./, '');
 }
