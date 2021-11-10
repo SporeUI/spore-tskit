@@ -1,9 +1,9 @@
 /**
  * 测量地理坐标的距离
  * @method util/measureDistance
- * @param {Number} lat1 坐标1精度
+ * @param {Number} lat1 坐标1经度
  * @param {Number} lng1 坐标1纬度
- * @param {Number} lat2 坐标2精度
+ * @param {Number} lat2 坐标2经度
  * @param {Number} lng2 坐标2纬度
  * @return {Number} 2个坐标之间的距离（千米）
  * @example
