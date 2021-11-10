@@ -6,3 +6,4 @@
  */
 
 export { eventOccurInside } from './eventOccurInside';
+export { isHTMLElement } from './isHTMLElement';

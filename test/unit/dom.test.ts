@@ -1,5 +1,6 @@
 import {
   eventOccurInside,
+  isHTMLElement,
 } from '../../src/index';
 
 describe('dom/eventOccurInside', () => {
@@ -29,5 +30,12 @@ describe('dom/eventOccurInside', () => {
       bubbles: true,
     });
     close.dispatchEvent(evt);
+  });
+});
+
+describe('dom/isHTMLElement', () => {
+  test('isHTMLElement(document) => boolean', () => {
+    expect(isHTMLElement(document)).toBe(true);
+    expect(isHTMLElement({})).toBe(false);
   });
 });
