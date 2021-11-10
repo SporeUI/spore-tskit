@@ -25,7 +25,8 @@
 ## Array
 
 - [lodash/includes](https://lodash.com/docs/4.17.15#includes) 检查元素是否在集合内
-- [lodash/remove](https://lodash.com/docs/4.17.15#remove) 移除数组元素
+- [lodash/remove](https://lodash.com/docs/4.17.15#remove) 移除数组元素，返回新数组
+- [lodash/pull](https://lodash.com/docs/4.17.15#pull) 移除数组元素，在原数组操作
 - [lodash/find](https://lodash.com/docs/4.17.15#find) 查找符合条件的元素
 - [lodash/findIndex](https://lodash.com/docs/4.17.15#findIndex) 符合条件的元素所在的位置
 - [lodash/flatten](https://lodash.com/docs/4.17.15#flatten) 数组扁平化
