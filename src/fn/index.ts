@@ -6,3 +6,6 @@
  */
 
 export { setLock } from './setLock';
+export { setPrepare } from './setPrepare';
+export { setQueue } from './setQueue';
+export { setRegular } from './setRegular';
