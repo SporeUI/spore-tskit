@@ -6,3 +6,4 @@
  */
 
 export { commaFormat } from './commaFormat';
+export { fixAccuracy } from './fixAccuracy';
