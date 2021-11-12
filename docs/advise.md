@@ -50,6 +50,10 @@
 - [axios](https://axios-http.com/) 前后端通用请求库
 - [node-fetch](https://github.com/node-fetch/node-fetch) Node 环境下使用 fetch Api
 
+## Fx
+
+- [tween.js](https://github.com/tweenjs/tween.js) 环境无关的动画执行函数
+
 ## Polyfill
 
 - [IntersectionObserver](https://github.com/w3c/IntersectionObserver) 滚动监听
