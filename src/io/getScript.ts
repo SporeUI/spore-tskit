@@ -1,51 +1,48 @@
 /**
  * 加载 script 文件
  * @method io/getScript
+ * @param {String} src script 地址
  * @param {Object} options 选项
- * @param {String} options.src script 地址
- * @param {String} [options.charset='utf-8'] script 编码
- * @param {Function} [options.onLoad] script 加载完成的回调函数
+ * @param {String} [options.charset=''] script 编码
+ * @return {Promise<undefined>} 加载完成的回调
  * @example
- * var $getScript = require('@spore-ui/kit/packages/io/getScript');
- * $getScript({
- *   src: 'https://code.jquery.com/jquery-3.3.1.min.js',
- *   onLoad: function () {
- *     console.info(window.jQuery);
- *   }
+ * import { getScript } from '@spore-ui/tskit';
+ * getScript('https://code.jquery.com/jquery-3.3.1.min.js').then(() => {
+ *   console.info('loaded');
  * });
  */
 
-// function getScript(options) {
-//   options = options || {};
+export interface TypeGetScriptOptions {
+  charset?: string;
+}
 
-//   var src = options.src || '';
-//   var charset = options.charset || '';
-//   var onLoad = options.onLoad || function () {};
+export function getScript(
+  src: string,
+  options?: TypeGetScriptOptions,
+): Promise<void> {
+  return new Promise((resolve) => {
+    const conf: TypeGetScriptOptions = {
+      charset: '',
+      ...options,
+    };
 
-//   var script = document.createElement('script');
-//   script.async = 'async';
-//   script.src = src;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = src;
 
-//   if (charset) {
-//     script.charset = charset;
-//   }
-//   script.onreadystatechange = function () {
-//     if (
-//       !this.readyState
-//       || this.readyState === 'loaded'
-//       || this.readyState === 'complete'
-//     ) {
-//       if (typeof onLoad === 'function') {
-//         onLoad();
-//       }
-//       this.onload = null;
-//       this.onreadystatechange = null;
-//       this.parentNode.removeChild(this);
-//     }
-//   };
-//   script.onload = script.onreadystatechange;
-//   document.getElementsByTagName('head')[0].appendChild(script);
-//   return script;
-// }
+    if (conf.charset) {
+      script.charset = conf.charset;
+    }
 
-// module.exports = getScript;
+    // 自 IE9 开始，都支持 script.onload 了
+    script.onload = () => {
+      script.onload = null;
+      resolve();
+    };
+
+    const head = document.getElementsByTagName('head')[0];
+    head.appendChild(script);
+  });
+}
+
+export default getScript;
