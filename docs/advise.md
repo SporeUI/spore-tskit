@@ -57,6 +57,7 @@
 
 ## 其他
 
+- [async](https://github.com/caolan/async) 实现多种不同模式的异步任务处理方案，比如异步队列就可以用这个工具实现
 - [collect](https://github.com/ecrmnn/collect.js) 处理数组与对象的一批工具函数
 - [lazy](https://github.com/dtao/lazy.js) 利用延迟计算实现高性能数据梳理的工具库
 - [path-to-regexp](https://github.com/pillarjs/path-to-regexp) 地址匹配

@@ -5,7 +5,6 @@
  * @method fn/setPromiseCache
  * @param {Function} fn 返回 Promise 对象的函数
  * @param {Number} cacheTime 数据缓存时间(ms)，传负值则为永久缓存
- * @param {Object} [bind] 函数的 this 指向
  * @returns {Function} 经过包装的函数
  * @example
  * import { setPromiseCache } from '@spore-ui/tskit';
