@@ -4,7 +4,7 @@ import {
   loadSdk,
 } from '../../src/index';
 
-describe('io/getScript', () => {
+describe('getScript', () => {
   test('正常加载远程脚本', async () => {
     const url = 'https://sporeui.github.io/spore-kit/docs/js/cb-test1.js?t=1';
     await getScript(url);
@@ -14,7 +14,7 @@ describe('io/getScript', () => {
   });
 });
 
-describe('io/loadSdk', () => {
+describe('loadSdk', () => {
   test('正常加载 sdk', async () => {
     const url = 'https://sporeui.github.io/spore-kit/docs/js/cb-test2.js?t=1';
     const val1 = await loadSdk({

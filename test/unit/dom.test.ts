@@ -3,7 +3,7 @@ import {
   isHTMLElement,
 } from '../../src/index';
 
-describe('dom/eventOccurInside', () => {
+describe('eventOccurInside', () => {
   test('事件解绑', (done) => {
     const html = [
       '<div id="occur-inside">',
@@ -33,7 +33,7 @@ describe('dom/eventOccurInside', () => {
   });
 });
 
-describe('dom/isHTMLElement', () => {
+describe('isHTMLElement', () => {
   test('isHTMLElement(document) => boolean', () => {
     expect(isHTMLElement(document)).toBe(true);
     expect(isHTMLElement({})).toBe(false);

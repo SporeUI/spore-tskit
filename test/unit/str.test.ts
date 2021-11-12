@@ -10,7 +10,7 @@ import {
   sizeOfUTF8String,
 } from '../../src/index';
 
-describe('str/byteLength', () => {
+describe('byteLength', () => {
   test('中文占2个字符', () => {
     expect(byteLength('中文cc')).toBe(6);
   });
@@ -22,28 +22,28 @@ describe('str/byteLength', () => {
   });
 });
 
-describe('str/dbcToSbc', () => {
+describe('dbcToSbc', () => {
   test('全角字符串转为英文字符串', () => {
     const str = dbcToSbc('ＳＡＡＳＤＦＳＡＤＦ');
     expect(str).toBe('SAASDFSADF');
   });
 });
 
-describe('str/decodeHTML', () => {
+describe('decodeHTML', () => {
   test('解码实体字符串', () => {
     const str = decodeHTML('&amp;&lt;&gt;&quot;&#39;&#32;');
     expect(str).toBe('&<>"\' ');
   });
 });
 
-describe('str/encodeHTML', () => {
+describe('encodeHTML', () => {
   test('指定字符编码为实体字符', () => {
     const str = encodeHTML('&<>"\' ');
     expect(str).toBe('&amp;&lt;&gt;&quot;&#39;&#32;');
   });
 });
 
-describe('str/getRnd36', () => {
+describe('getRnd36', () => {
   test('返回值为 string 类型', () => {
     expect(typeof getRnd36()).toBe('string');
   });
@@ -56,7 +56,7 @@ describe('str/getRnd36', () => {
   });
 });
 
-describe('str/getTime36', () => {
+describe('getTime36', () => {
   test('当前时间作为默认参数', () => {
     const str = getTime36();
     expect(typeof str).toBe('string');
@@ -67,14 +67,14 @@ describe('str/getTime36', () => {
   });
 });
 
-describe('str/ipToHex', () => {
+describe('ipToHex', () => {
   test('IP字符串转为 16 进制', () => {
     expect(ipToHex('255.255.255.255')).toBe('ffffffff');
     expect(ipToHex('10.10.10.10')).toBe('0a0a0a0a');
   });
 });
 
-describe('str/getLeftByteString', () => {
+describe('getLeftByteString', () => {
   test('按照中文占 2 个字符的规则进行截取', () => {
     expect(getLeftByteString('a世界真和谐', 5)).toBe('a世界');
     expect(getLeftByteString('a世界真和谐', 6)).toBe('a世界');
@@ -87,7 +87,7 @@ describe('str/getLeftByteString', () => {
   });
 });
 
-describe('str/sizeOfUTF8String', () => {
+describe('sizeOfUTF8String', () => {
   test('获取字符串的 utf8 长度', () => {
     expect(sizeOfUTF8String('中文c')).toBe(7);
   });

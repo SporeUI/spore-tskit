@@ -3,7 +3,7 @@ import {
   fixAccuracy,
 } from '../../src/index';
 
-describe('num/commaFormat', () => {
+describe('commaFormat', () => {
   test('commaFormat(1234) => "1,234"', () => {
     expect(commaFormat(1234)).toBe('1,234');
   });
@@ -15,7 +15,7 @@ describe('num/commaFormat', () => {
   });
 });
 
-describe('num/fixAccuracy', () => {
+describe('fixAccuracy', () => {
   test('fixAccuracy(0.1 + 0.2) => 0.3', () => {
     expect(fixAccuracy(0.1 + 0.2)).toBe(0.3);
   });

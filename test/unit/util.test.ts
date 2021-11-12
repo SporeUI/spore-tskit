@@ -9,7 +9,7 @@ import {
   rgbToHsl,
 } from '../../src/index';
 
-describe('util/abToHex', () => {
+describe('abToHex', () => {
   test('abToHex(buffer)', () => {
     const ab = new ArrayBuffer(2);
     const dv = new DataView(ab);
@@ -19,7 +19,7 @@ describe('util/abToHex', () => {
   });
 });
 
-describe('util/ascToHex', () => {
+describe('ascToHex', () => {
   test('ascToHex("") => ""', () => {
     expect(ascToHex('')).toBe('');
   });
@@ -29,13 +29,13 @@ describe('util/ascToHex', () => {
   });
 });
 
-describe('util/getType', () => {
+describe('getType', () => {
   test('type(null) => "null"', () => {
     expect(getType(null)).toBe('null');
   });
 });
 
-describe('util/hexToAb', () => {
+describe('hexToAb', () => {
   test('hexToAb("") => ArrayBuffer(0)', () => {
     const ab = hexToAb('');
     expect(ab.toString()).toBe('[object ArrayBuffer]');
@@ -52,7 +52,7 @@ describe('util/hexToAb', () => {
   });
 });
 
-describe('util/hexToAsc', () => {
+describe('hexToAsc', () => {
   test("hexToAsc('') => ''", () => {
     expect(hexToAsc('')).toBe('');
   });
@@ -62,7 +62,7 @@ describe('util/hexToAsc', () => {
   });
 });
 
-describe('util/hslToRgb', () => {
+describe('hslToRgb', () => {
   test('hslToRgb(0, 0, 0) => [0,0,0]', () => {
     const rgb = hslToRgb(0, 0, 0).join();
     expect(rgb).toBe('0,0,0');
@@ -88,7 +88,7 @@ describe('util/hslToRgb', () => {
   });
 });
 
-describe('util/rgbToHsl', () => {
+describe('rgbToHsl', () => {
   test('rgbToHsl(0, 0, 0) => [0,0,0]', () => {
     const hsl = rgbToHsl(0, 0, 0).join();
     expect(hsl).toBe('0,0,0');
@@ -115,7 +115,7 @@ describe('util/rgbToHsl', () => {
   });
 });
 
-describe('util/measureDistance', () => {
+describe('measureDistance', () => {
   test('measureDistance(0, 0, 100, 100) => 9826.40065109978', () => {
     const distance = measureDistance(0, 0, 100, 100);
     expect(distance).toBe(9826.40065109978);

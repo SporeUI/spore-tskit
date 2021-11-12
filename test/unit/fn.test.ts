@@ -7,7 +7,7 @@ import {
   setRegular,
 } from '../../src/index';
 
-describe('fn/setLock', () => {
+describe('setLock', () => {
   test('冷却状态下函数不执行', async () => {
     let num = 0;
     const fn = setLock(() => {
@@ -22,7 +22,7 @@ describe('fn/setLock', () => {
   });
 });
 
-describe('fn/setPrepare', () => {
+describe('setPrepare', () => {
   test('函数会在条件就绪后顺序执行', async () => {
     const arr: number[] = [];
     const ready = setPrepare();
@@ -45,7 +45,7 @@ describe('fn/setPrepare', () => {
   });
 });
 
-describe('fn/setPromiseCache', () => {
+describe('setPromiseCache', () => {
   test('函数在回调前会缓存执行结果', async () => {
     let index = 0;
     const increase = () => new Promise((resolve) => {
@@ -99,7 +99,7 @@ describe('fn/setPromiseCache', () => {
   });
 });
 
-describe('fn/setQueue', () => {
+describe('setQueue', () => {
   test('队列函数会按顺序执行', async () => {
     let num = 0;
     const fn = setQueue(() => {
@@ -116,7 +116,7 @@ describe('fn/setQueue', () => {
   });
 });
 
-describe('fn/setRegular', () => {
+describe('setRegular', () => {
   test('函数只会按固定频率被触发', async () => {
     let num = 0;
     const fn = setRegular(() => {

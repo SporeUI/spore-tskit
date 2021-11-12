@@ -7,14 +7,14 @@ import {
   CountDown,
 } from '../../src/index';
 
-describe('time/formatDate', () => {
+describe('formatDate', () => {
   test('format(1540915200000) => "2018-10-31 00:00"', () => {
     const str = formatDate(1540915200000);
     expect(str).toBe('2018-10-31 00:00');
   });
 });
 
-describe('time/getLastStartTime', () => {
+describe('getLastStartTime', () => {
   test('2018-10-25 12:43:12 当天时间戳', () => {
     const time = getLastStartTime(
       new Date('2018-10-25 12:43:12'),
@@ -58,7 +58,7 @@ describe('time/getLastStartTime', () => {
   });
 });
 
-describe('time/getTimeSplit', () => {
+describe('getTimeSplit', () => {
   test('2018-10-25 当月第1天时间戳', () => {
     const time = getTimeSplit(
       '2018-10-25',
@@ -77,7 +77,7 @@ describe('time/getTimeSplit', () => {
   });
 });
 
-describe('time/parseUnitTime', () => {
+describe('parseUnitTime', () => {
   test('parseUnitTime(12345 * 67890).day => 9', () => {
     const udate = parseUnitTime(12345 * 67890);
     expect(udate.day).toBe(9);
@@ -88,7 +88,7 @@ describe('time/parseUnitTime', () => {
   });
 });
 
-describe('time/CountDown', () => {
+describe('CountDown', () => {
   test('提供定时触发能力', (done) => {
     const target = Date.now() + 150;
     let step = 0;
