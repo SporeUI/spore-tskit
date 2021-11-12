@@ -6,4 +6,4 @@
  */
 
 export { getScript } from './getScript';
-// export { loadSdk } from './loadSdk';
+export { loadSdk } from './loadSdk';

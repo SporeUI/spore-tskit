@@ -1,20 +1,3 @@
-// var $assign = require('lodash/assign');
-// var $get = require('lodash/get');
-// var $getScript = require('./getScript');
-
-// var propName = 'SPORE_SDK_PROMISE';
-// var cache = null;
-
-// if (typeof window !== 'undefined') {
-//   cache = window[propName];
-//   if (!cache) {
-//     cache = {};
-//     window[propName] = cache;
-//   }
-// } else {
-//   cache = {};
-// }
-
 /**
  * sdk 加载统一封装
  * - 多次调用不会发起重复请求
@@ -22,53 +5,69 @@
  * @param {Object} options 选项
  * @param {String} options.name sdk 全局变量名称
  * @param {String} options.url script 地址
- * @param {String} [options.charset='utf-8'] script 编码
- * @param {Function} [options.onLoad] script 加载完成的回调函数
+ * @param {String} [options.charset=''] script 编码
+ * @return {Promise<unknown>} sdk 加载完成，回调加载的对象
  * @example
- * var $loadSdk = require('@spore-ui/kit/packages/io/loadSdk');
- * $loadSdk({
+ * import { loadSdk } from '@spore-ui/tskit';
+ * loadSdk({
  *   name: 'TencentCaptcha',
  *   url: 'https://ssl.captcha.qq.com/TCaptcha.js'
  * }).then(TencentCaptcha => {})
  */
 
-// var loadSdk = function (options) {
-//   var conf = $assign({
-//     name: '',
-//     url: '',
-//     charset: 'utf-8',
-//   }, options);
+import get from 'lodash/get';
+import set from 'lodash/set';
+import { getScript } from './getScript';
 
-//   var name = conf.name;
-//   if (!name) {
-//     return Promise.reject(new Error('Require parameter: options.name'));
-//   }
-//   if (!conf.url) {
-//     return Promise.reject(new Error('Require parameter: options.url'));
-//   }
+export interface TypeLoadSdkOptions {
+  name: string;
+  url: string;
+  charset?: string;
+}
 
-//   var pm = cache[name];
-//   if (pm) {
-//     if (pm.sdk) {
-//       return Promise.resolve(pm.sdk);
-//     }
-//     return pm;
-//   }
+export interface TypePromiseMap {
+  [key: string]: Promise<unknown>;
+}
 
-//   pm = new Promise(function (resolve) {
-//     $getScript({
-//       src: conf.url,
-//       charset: conf.charset,
-//       onLoad: function () {
-//         var sdk = $get(window, name);
-//         pm.sdk = sdk;
-//         resolve(sdk);
-//       },
-//     });
-//   });
-//   cache[name] = pm;
+const CACHE_NAME = 'SPORE_SDK_PROMISE';
 
-//   return pm;
-// };
+let cache: TypePromiseMap = null;
 
-// module.exports = loadSdk;
+if (typeof window === 'undefined') {
+  cache = {};
+} else {
+  cache = get(window, CACHE_NAME) as TypePromiseMap;
+  if (!cache) {
+    cache = {};
+    set(window, CACHE_NAME, cache);
+  }
+}
+
+export function loadSdk(options: TypeLoadSdkOptions) {
+  const conf: TypeLoadSdkOptions = {
+    name: '',
+    url: '',
+    charset: '',
+    ...options,
+  };
+
+  const {
+    name,
+    url,
+    charset,
+  } = conf;
+
+  let pm = cache[name];
+  if (pm) {
+    return pm;
+  }
+
+  pm = getScript(url, {
+    charset,
+  }).then(() => get(window, name));
+  cache[name] = pm;
+
+  return pm;
+}
+
+export default loadSdk;

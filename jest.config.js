@@ -5,7 +5,6 @@ module.exports = {
   rootDir: path.resolve(__dirname, './'),
   coverageDirectory: './docs-dist/coverage',
   preset: 'ts-jest',
-  testEnvironment: 'node',
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'vue', 'json'],
   transform: {
     '.*\\.js$': 'babel-jest',

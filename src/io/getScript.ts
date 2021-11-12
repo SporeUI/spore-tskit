@@ -3,11 +3,11 @@
  * @method io/getScript
  * @param {String} src script 地址
  * @param {Object} options 选项
- * @param {String} [options.charset=''] script 编码
+ * @param {String} [options.charset='utf-8'] script 编码
  * @return {Promise<undefined>} 加载完成的回调
  * @example
  * import { getScript } from '@spore-ui/tskit';
- * getScript('https://code.jquery.com/jquery-3.3.1.min.js').then(() => {
+ * getScript('https://sporeui.github.io/spore-kit/docs/js/test.js').then(() => {
  *   console.info('loaded');
  * });
  */
@@ -40,7 +40,7 @@ export function getScript(
       resolve();
     };
 
-    const head = document.getElementsByTagName('head')[0];
+    const head = document.querySelector('head');
     head.appendChild(script);
   });
 }
