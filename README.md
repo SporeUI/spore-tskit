@@ -6,6 +6,7 @@
 ![Test](https://github.com/SporeUI/spore-tskit/actions/workflows/test.yml/badge.svg)
 ![Release](https://github.com/SporeUI/spore-tskit/actions/workflows/release.yml/badge.svg)
 [![codecov](https://codecov.io/gh/SporeUI/spore-tskit/branch/main/graph/badge.svg)](https://codecov.io/gh/SporeUI/spore-tskit)
+![GitHub top language](https://img.shields.io/github/languages/top/SporeUI/spore-tskit)
 
 现代工具函数库 / 面向 TypeScript
 
