@@ -1,6 +1,6 @@
 /**
  * 获取数据类型
- * @method util/getType
+ * @method getType
  * @param {*} item 任何类型数据
  * @return {String} 对象类型
  * @example

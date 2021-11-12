@@ -1,7 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 /**
- * 数字工具
- * @module spore-ui/tskit/src/num
+ * @module 数字处理
  * @see https://github.com/SporeUI/spore-tskit/tree/master/src/num
  */
 

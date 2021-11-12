@@ -1,6 +1,6 @@
 /**
  * 加载 script 文件
- * @method io/getScript
+ * @method getScript
  * @param {String} src script 地址
  * @param {Object} options 选项
  * @param {String} [options.charset='utf-8'] script 编码

@@ -210,10 +210,10 @@ export class CountDown {
 
   /**
     * 重设目标时间
-    * @method countDown#setTarget
-    * @memberof time/countDown
+    * @method CountDown#setTarget
+    * @memberof CountDown
     * @example
-    * const cd = countDown();
+    * const cd = new CountDown();
     * const localTime = '2019/01/01';
     * cd.setTarget(serverTime);
     */
@@ -223,8 +223,8 @@ export class CountDown {
 
   /**
     * 纠正时间差
-    * @method countDown#correct
-    * @memberof time/countDown
+    * @method CountDown#correct
+    * @memberof CountDown
     * @example
     * const cd = new CountDown();
     * const serverTime = '2019/01/01';
@@ -251,8 +251,8 @@ export class CountDown {
 
   /**
     * 停止倒计时
-    * @method countDown#stop
-    * @memberof time/countDown
+    * @method CountDown#stop
+    * @memberof CountDown
     * @example
     * const cd = new CountDown();
     * cd.stop();
@@ -274,8 +274,8 @@ export class CountDown {
 
   /**
     * 销毁倒计时
-    * @method countDown#destroy
-    * @memberof time/countDown
+    * @method CountDown#destroy
+    * @memberof CountDown
     * @example
     * const cd = CountDown();
     * cd.destroy();

@@ -1,7 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 /**
- * 函数工具
- * @module spore-ui/tskit/src/fn
+ * @module 函数包装与处理
  * @see https://github.com/SporeUI/spore-tskit/tree/master/src/fn
  */
 

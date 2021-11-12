@@ -5,7 +5,7 @@
  * - 之后插入管理器的函数立即执行。
  * - 返回的函数作用机制类似 jQuery.ready。
  * - 可以设置任何条件来触发 ready 状态。
- * @module fn/setPrepare
+ * @module setPrepare
  * @returns {Function} 条件触发管理器函数，传入一个 function 作为任务执行函数参数
  * @example
  * import { setPrepare } from '@spore-ui/tskit';

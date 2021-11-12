@@ -2,7 +2,7 @@
  * 包装为一个缓存函数，限定时间内，返回之前执行的 Promise 结果
  * - 默认在回调执行前多次请求时，返回第一个回调结果
  * - 可实现基于 Promise 机制的防抖能力。
- * @method fn/setPromiseCache
+ * @method setPromiseCache
  * @param {Function} fn 返回 Promise 对象的函数
  * @param {Number} cacheTime 数据缓存时间(ms)，传负值则为永久缓存
  * @returns {Function} 经过包装的函数

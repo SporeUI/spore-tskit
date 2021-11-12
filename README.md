@@ -7,7 +7,7 @@
 ![Release](https://github.com/SporeUI/spore-tskit/actions/workflows/release.yml/badge.svg)
 [![codecov](https://codecov.io/gh/SporeUI/spore-tskit/branch/main/graph/badge.svg)](https://codecov.io/gh/SporeUI/spore-tskit)
 
-工具函数库 / 面向 TypeScript
+现代工具函数库 / 面向 TypeScript
 
 [releases and changelog](https://github.com/SporeUI/spore-tskit/releases)
 

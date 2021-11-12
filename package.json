@@ -14,7 +14,7 @@
     "vuepress-build": "vuepress build docs",
     "doc-build": "documentation build ./es6/index.js -f md -o ./docs/docs.md --markdown-toc false --np",
     "cp": "cp ./README.md docs/index.md",
-    "doc": "npm run compile && npm run doc-build && npm run cp",
+    "doc": "npm run compile-es6 && npm run doc-build && npm run cp",
     "prepublishOnly": "npm run build",
     "test": "jest --coverage ./test/unit",
     "lint": "eslint ./src",

@@ -1,7 +1,7 @@
 /**
  * 修正小数精度
  * - 解决 0.1 + 0.2 !== 0.3 的问题
- * @method num/fixAccuracy
+ * @method fixAccuracy
  * @param {Number} num 数字
  * @param {Number} [accuracy=10] 精度位数
  * @returns {String} 千分位表示的数字

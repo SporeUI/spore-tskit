@@ -1,7 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 /**
- * 函数工具
- * @module spore-ui/tskit/src/io
+ * @module 接口请求与异步获取
  * @see https://github.com/SporeUI/spore-tskit/tree/master/src/io
  */
 

@@ -1,6 +1,5 @@
 /**
- * 时间相关工具函数
- * @module spore-ui/tskit/src/time
+ * @module 时间与日期处理
  * @see https://github.com/SporeUI/spore-tskit/tree/master/src/time
  */
 
