@@ -26,9 +26,7 @@ export function setLock(
     timer = setTimeout(() => {
       timer = null;
     }, delay);
-    if (typeof fn === 'function') {
-      fn(...args);
-    }
+    fn(...args);
   };
 }
 

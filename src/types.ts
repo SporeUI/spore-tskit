@@ -13,3 +13,5 @@ export interface TypeSimpleObject {
 }
 
 export type TypeDate = Date | string | number;
+
+export type TypePromiseFn = (...args: unknown[]) => Promise<unknown>;

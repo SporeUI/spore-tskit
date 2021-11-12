@@ -7,5 +7,6 @@
 
 export { setLock } from './setLock';
 export { setPrepare } from './setPrepare';
+export { setPromiseCache } from './setPromiseCache';
 export { setQueue } from './setQueue';
 export { setRegular } from './setRegular';

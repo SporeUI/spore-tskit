@@ -57,9 +57,7 @@ export function setPrepare(): TypeReadyFn {
 
   const attampt = (fn: Function) => {
     if (condition) {
-      if (typeof fn === 'function') {
-        fn(payload);
-      }
+      fn(payload);
     } else {
       queue.push(fn);
     }
@@ -70,9 +68,7 @@ export function setPrepare(): TypeReadyFn {
     payload = data;
     while (queue.length) {
       const fn = queue.shift();
-      if (typeof fn === 'function') {
-        fn(payload);
-      }
+      fn(payload);
     }
   };
 

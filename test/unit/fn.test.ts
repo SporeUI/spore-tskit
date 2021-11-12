@@ -2,6 +2,7 @@ import {
   delay,
   setLock,
   setPrepare,
+  setPromiseCache,
   setQueue,
   setRegular,
 } from '../../src/index';
@@ -41,6 +42,60 @@ describe('fn/setPrepare', () => {
     expect(arr[0]).toBe(1);
     expect(arr[1]).toBe(2);
     expect(arr[2]).toBe(3);
+  });
+});
+
+describe('fn/setPromiseCache', () => {
+  test('函数在回调前会缓存执行结果', async () => {
+    let index = 0;
+    const increase = () => new Promise((resolve) => {
+      setTimeout(() => {
+        index += 1;
+        resolve(index);
+      }, 10);
+    });
+    const cacheIncrease = setPromiseCache(increase);
+    const pm1 = cacheIncrease();
+    const pm2 = cacheIncrease();
+    const rs1 = await pm1;
+    const rs2 = await pm2;
+    expect(rs1).toBe(1);
+    expect(rs2).toBe(1);
+  });
+
+  test('默认回调结束后，会丢弃缓存结果', async () => {
+    let index = 0;
+    const increase = () => new Promise((resolve) => {
+      setTimeout(() => {
+        index += 1;
+        resolve(index);
+      }, 10);
+    });
+    const cacheIncrease = setPromiseCache(increase);
+    const rs1 = await cacheIncrease();
+    const rs2 = await cacheIncrease();
+    expect(rs1).toBe(1);
+    expect(rs2).toBe(2);
+  });
+
+  test('函数在指定时间内会缓存执行结果', async () => {
+    let index = 0;
+    const increase = () => new Promise((resolve) => {
+      setTimeout(() => {
+        index += 1;
+        resolve(index);
+      }, 10);
+    });
+    const cacheIncrease = setPromiseCache(increase, 50);
+    const rs1 = await cacheIncrease();
+    const rs2 = await cacheIncrease();
+    expect(rs1).toBe(1);
+    expect(rs2).toBe(1);
+    await delay(100);
+    const rs3 = await cacheIncrease();
+    const rs4 = await cacheIncrease();
+    expect(rs3).toBe(2);
+    expect(rs4).toBe(2);
   });
 });
 
