@@ -17,3 +17,18 @@ jobs:
         run: npm install
       - name: unit-test
         run: npm test
+      - name: build
+        run: npm run build
+      - name: md-build
+        run: npm run doc-build
+      - name: cp-files
+        run: cp ./README.md ./docs/index.md
+      - name: vuepress-build
+        run: npm run vuepress-build
+      - name: github-pages-deploy
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: docs-dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
