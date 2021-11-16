@@ -8,7 +8,7 @@
  * isHTMLElement(document.body) // true
  */
 export function isHTMLElement(item: unknown): boolean {
-  const node = item as any;
+  const node = item as HTMLElement;
   return !!(
     node
     && node.nodeName
