@@ -16,13 +16,8 @@
 
 export function eventOccurInside(event: Event, node: HTMLElement): boolean {
   if (node && event && event.target) {
-    let pos = event.target as HTMLElement;
-    while (pos) {
-      if (pos === node) {
-        return true;
-      }
-      pos = pos.parentNode as HTMLElement;
-    }
+    const el = event.target as HTMLElement;
+    return node.contains(el);
   }
   return false;
 }
