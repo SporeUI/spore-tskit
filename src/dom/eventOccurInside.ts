@@ -17,6 +17,7 @@
 export function eventOccurInside(event: Event, node: HTMLElement): boolean {
   if (node && event && event.target) {
     const el = event.target as HTMLElement;
+    // IE9 以上即可使用 contains 方法
     return node.contains(el);
   }
   return false;
