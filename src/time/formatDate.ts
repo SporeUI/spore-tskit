@@ -76,8 +76,8 @@ export interface TypeDateInfo {
 }
 
 export interface TypeFormatDateOptions {
-  weekday: string[];
-  render: (rs: TypeDateInfo) => string;
+  weekday?: string[];
+  render?: (rs: TypeDateInfo) => string;
 }
 
 const WEEKDAYS = '日一二三四五六'.split('');

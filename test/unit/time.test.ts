@@ -12,6 +12,14 @@ describe('formatDate', () => {
     const str = formatDate(1540915200000);
     expect(str).toBe('2018-10-31 00:00');
   });
+  test('format(1540915200000) => "2018-10-31 00:00"', () => {
+    const str = formatDate(1540915200000, {
+      render(rs) {
+        return `${rs.YYYY}/${rs.MM}/${rs.DD} 周${rs.d}`;
+      },
+    });
+    expect(str).toBe('2018/10/31 周三');
+  });
 });
 
 describe('getLastStartTime', () => {
