@@ -17,8 +17,8 @@
     "doc": "npm run compile-es6 && npm run doc-build && npm run cp",
     "prepublishOnly": "npm run build",
     "test": "jest --coverage ./test/unit",
-    "lint": "eslint ./src",
-    "lint:test": "eslint ./test",
+    "lint": "eslint ./src --ext .ts",
+    "lint:test": "eslint ./test --ext .ts",
     "husky-prepare": "husky install",
     "cz": "git add . && git cz"
   },
