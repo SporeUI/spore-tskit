@@ -1,11 +1,13 @@
 import {
   delay,
+} from '../../src/time/index';
+import {
   setLock,
   setPrepare,
   setPromiseCache,
   setQueue,
   setRegular,
-} from '../../src/index';
+} from '../../src/fn/index';
 
 describe('setLock', () => {
   test('冷却状态下函数不执行', async () => {

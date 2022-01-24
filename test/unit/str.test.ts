@@ -8,7 +8,7 @@ import {
   ipToHex,
   getLeftByteString,
   sizeOfUTF8String,
-} from '../../src/index';
+} from '../../src/str/index';
 
 describe('byteLength', () => {
   test('中文占2个字符', () => {

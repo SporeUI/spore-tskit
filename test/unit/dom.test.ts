@@ -1,7 +1,7 @@
 import {
   eventOccurInside,
   isHTMLElement,
-} from '../../src/index';
+} from '../../src/dom/index';
 
 describe('eventOccurInside', () => {
   test('事件解绑', (done) => {

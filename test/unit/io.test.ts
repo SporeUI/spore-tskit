@@ -2,7 +2,7 @@ import get from 'lodash/get';
 import {
   getScript,
   loadSdk,
-} from '../../src/index';
+} from '../../src/io/index';
 
 describe('getScript', () => {
   test('正常加载远程脚本', async () => {

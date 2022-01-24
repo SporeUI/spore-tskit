@@ -5,7 +5,7 @@ import {
   getTimeSplit,
   parseUnitTime,
   CountDown,
-} from '../../src/index';
+} from '../../src/time/index';
 
 describe('formatDate', () => {
   test('format(1540915200000) => "2018-10-31 00:00"', () => {

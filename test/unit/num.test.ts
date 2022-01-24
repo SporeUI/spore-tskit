@@ -1,7 +1,7 @@
 import {
   commaFormat,
   fixAccuracy,
-} from '../../src/index';
+} from '../../src/num/index';
 
 describe('commaFormat', () => {
   test('commaFormat(1234) => "1,234"', () => {

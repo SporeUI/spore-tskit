@@ -7,7 +7,7 @@ import {
   hslToRgb,
   measureDistance,
   rgbToHsl,
-} from '../../src/index';
+} from '../../src/util/index';
 
 describe('abToHex', () => {
   test('abToHex(buffer)', () => {
