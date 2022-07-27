@@ -9,6 +9,8 @@ import {
   setRegular,
 } from '../../src/fn/index';
 
+jest.useRealTimers();
+
 describe('setLock', () => {
   test('冷却状态下函数不执行', async () => {
     let num = 0;
@@ -49,12 +51,12 @@ describe('setPrepare', () => {
 
 describe('setPromiseCache', () => {
   test('函数在回调前会缓存执行结果', async () => {
-    let index = 0;
+    let index = 1;
     const increase = () => new Promise((resolve) => {
+      resolve(index);
       setTimeout(() => {
         index += 1;
-        resolve(index);
-      }, 30);
+      }, 10);
     });
     const cacheIncrease = setPromiseCache(increase);
     const pm1 = cacheIncrease();

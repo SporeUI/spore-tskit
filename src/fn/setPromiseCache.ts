@@ -24,15 +24,15 @@
  * exec(); // 1
  */
 
-import { TypePromiseFn } from '../types';
+export type TypePromiseFn = (...args: any[]) => Promise<any>;
 
 export function setPromiseCache<T extends TypePromiseFn>(
   fn: T,
   cacheTime: number = 0,
 ): T {
-  let pm: Promise<unknown> = null;
+  let pm: Promise<any> = null;
   let startTime: number = null;
-  return (async (...args: unknown[]) => {
+  return (async (...args: any[]) => {
     let rs = null;
     const now = new Date().getTime();
     if (
