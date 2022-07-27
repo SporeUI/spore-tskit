@@ -20,6 +20,9 @@ export type TypeQueryCache = Map<string, TypePlainObject>;
 
 export const queryCache: TypeQueryCache = new Map();
 
+export function getQuery(): TypePlainObject;
+export function getQuery(href: string): TypePlainObject;
+export function getQuery(href: string, name: string): string;
 export function getQuery(href?: string, name?: string): string | TypePlainObject {
   const url = href || this?.location?.href || '';
   if (!url) {
