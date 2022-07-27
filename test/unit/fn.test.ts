@@ -54,7 +54,7 @@ describe('setPromiseCache', () => {
       setTimeout(() => {
         index += 1;
         resolve(index);
-      }, 10);
+      }, 30);
     });
     const cacheIncrease = setPromiseCache(increase);
     const pm1 = cacheIncrease();
@@ -71,7 +71,7 @@ describe('setPromiseCache', () => {
       setTimeout(() => {
         index += 1;
         resolve(index);
-      }, 10);
+      }, 30);
     });
     const cacheIncrease = setPromiseCache(increase);
     const rs1 = await cacheIncrease();
@@ -86,7 +86,7 @@ describe('setPromiseCache', () => {
       setTimeout(() => {
         index += 1;
         resolve(index);
-      }, 10);
+      }, 30);
     });
     const cacheIncrease = setPromiseCache(increase, 50);
     const rs1 = await cacheIncrease();
