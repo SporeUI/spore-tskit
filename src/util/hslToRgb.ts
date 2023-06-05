@@ -1,8 +1,8 @@
 /**
  * HSL颜色值转换为RGB
- * - 换算公式改编自 http://en.wikipedia.org/wiki/HSL_color_space.
  * - h, s, 和 l 设定在 [0, 1] 之间
  * - 返回的 r, g, 和 b 在 [0, 255]之间
+ * @see http://en.wikipedia.org/wiki/HSL_color_space
  * @method hslToRgb
  * @param {Number} h 色相
  * @param {Number} s 饱和度

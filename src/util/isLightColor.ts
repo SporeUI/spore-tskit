@@ -1,6 +1,17 @@
 import { parseRGB } from './parseRGB';
 
-// @see https://zh.wikipedia.org/zh-cn/YUV
+/**
+ * 判断颜色是否为浅色
+ * @see https://zh.wikipedia.org/zh-cn/YUV
+ * @method parseRGB
+ * @param {String} color 16进制色值
+ * @param {Number} [base=0.6] 深浅判断基准值，取值 [0, 1] 之间的小数
+ * @returns {Boolean} 是否为浅色
+ * @example
+ * import isLightColor from '@spore-ui/tskit';
+ * isLightColor('#ffffff'); // => true
+ * isLightColor('#000000'); // => false
+ */
 export function isLightColor(color: string, base = 0.6): boolean {
   let colorIsLight = false;
   try {
