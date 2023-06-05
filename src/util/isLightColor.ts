@@ -3,7 +3,7 @@ import { parseRGB } from './parseRGB';
 /**
  * 判断颜色是否为浅色
  * @see https://zh.wikipedia.org/zh-cn/YUV
- * @method parseRGB
+ * @method isLightColor
  * @param {String} color 16进制色值
  * @param {Number} [base=0.6] 深浅判断基准值，取值 [0, 1] 之间的小数
  * @returns {Boolean} 是否为浅色
