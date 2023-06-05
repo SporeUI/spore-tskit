@@ -15,8 +15,11 @@
  */
 import { TypeDate } from '../types';
 
+// 北京在东 8 时区
+const EIGHT_HOURS = 8 * 3600 * 1000;
+
 export function getUTCDate(time: TypeDate): Date {
-  const utcTimeStamp: number = new Date(time).getTime() + 28800000;
+  const utcTimeStamp: number = new Date(time).getTime() + EIGHT_HOURS;
   const utcDate = new Date(utcTimeStamp);
   return utcDate;
 }

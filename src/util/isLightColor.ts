@@ -8,7 +8,7 @@ import { parseRGB } from './parseRGB';
  * @param {Number} [base=0.6] 深浅判断基准值，取值 [0, 1] 之间的小数
  * @returns {Boolean} 是否为浅色
  * @example
- * import isLightColor from '@spore-ui/tskit';
+ * import { isLightColor } from '@spore-ui/tskit';
  * isLightColor('#ffffff'); // => true
  * isLightColor('#000000'); // => false
  */

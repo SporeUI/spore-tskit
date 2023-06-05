@@ -5,7 +5,7 @@
  * @param {Object} query 参数对象
  * @return {String} 拼接好参数的URL字符串
  * @example
- * import setQuery from '@spore-ui/tskit';
+ * import { setQuery } from '@spore-ui/tskit';
  * setQuery('localhost'); // 'localhost'
  * setQuery('localhost', {a: 1}); // 'localhost?a=1'
  * setQuery('', {a: 1}); // '?a=1'

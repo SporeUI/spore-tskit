@@ -6,7 +6,7 @@
  * @param {String} color 16进制色值
  * @returns {Array} RGB色值数值
  * @example
- * import parseRGB from '@spore-ui/tskit';
+ * import { parseRGB } from '@spore-ui/tskit';
  * parseRGB('#ffffff'); // => [255,255,255]
  * parseRGB('#fff'); // => [255,255,255]
  */
