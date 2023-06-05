@@ -1,4 +1,14 @@
 /**
+ * 激活任务管理器的触发条件，在此之前插入管理器的任务按队列顺序执行，之后插入的任务函数立即执行。
+ * @method prepare#ready
+ * @memberof prepare
+ */
+export type TypeReadyFn = {
+  done: Function;
+  (fn: Function): void;
+};
+
+/**
  * 以闭包机制构建一个条件触发管理器
  * - 条件触发管理器本身是一个函数
  *   - 条件触发管理器作用机制类似 jQuery.ready
@@ -41,18 +51,6 @@
  *   });
  * }, 2100);
  */
-
-/**
- * 激活任务管理器的触发条件，在此之前插入管理器的任务按队列顺序执行，之后插入的任务函数立即执行。
- * @method prepare#ready
- * @memberof prepare
- */
-
-export type TypeReadyFn = {
-  done: Function;
-  (fn: Function): void;
-};
-
 export function setPrepare(): TypeReadyFn {
   const queue: Function[] = [];
   let condition = false;

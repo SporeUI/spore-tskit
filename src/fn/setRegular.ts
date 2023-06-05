@@ -1,3 +1,5 @@
+import { TypeInterval } from '../types';
+
 /**
  * 包装为规律触发的函数，用于降低密集事件的处理频率
  * - 在疯狂操作期间，按照规律时间间隔，来调用任务函数
@@ -20,9 +22,6 @@
  *   comp.regularCount();
  * }));
  */
-
-import { TypeInterval } from '../types';
-
 export function setRegular(fn: Function, delay: number): Function {
   let enable = true;
   let timer: TypeInterval = null;

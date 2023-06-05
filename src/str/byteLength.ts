@@ -8,7 +8,6 @@
  * import { byteLength } from '@spore-ui/tskit';
  * byteLength('中文cc'); // 6
  */
-
 export function byteLength(str: string): number {
   let aMatch = null;
   if (!str) {

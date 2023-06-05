@@ -1,3 +1,15 @@
+import { getUTCDate } from './getUTCDate';
+import {
+  getTimeSplit,
+  TypeTimeUnit,
+} from './getTimeSplit';
+import { TypeDate } from '../types';
+
+const enum UnitTime {
+  HOUR = 60 * 60 * 1000,
+  DAY = 24 * 60 * 60 * 1000,
+}
+
 /**
  * 获取过去一段时间的起始日期，如3月前第1天，2周前第1天，3小时前整点
  * @method getLastStart
@@ -14,19 +26,6 @@
  * ).getTime(); // 1538323200000
  * new Date(time); // Mon Oct 01 2018 00:00:00 GMT+0800 (中国标准时间)
  */
-
-import { getUTCDate } from './getUTCDate';
-import {
-  getTimeSplit,
-  TypeTimeUnit,
-} from './getTimeSplit';
-import { TypeDate } from '../types';
-
-const enum UnitTime {
-  HOUR = 60 * 60 * 1000,
-  DAY = 24 * 60 * 60 * 1000,
-}
-
 export function getLastStartTime(
   time: TypeDate,
   type: TypeTimeUnit = 'day',

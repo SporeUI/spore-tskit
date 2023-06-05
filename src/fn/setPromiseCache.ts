@@ -1,3 +1,5 @@
+export type TypePromiseFn = (...args: any[]) => Promise<any>;
+
 /**
  * 包装为一个缓存函数，限定时间内，返回之前执行的 Promise 结果
  * - 默认在回调执行前多次请求时，返回第一个回调结果
@@ -23,9 +25,6 @@
  * exec(); // 1
  * exec(); // 1
  */
-
-export type TypePromiseFn = (...args: any[]) => Promise<any>;
-
 export function setPromiseCache<T extends TypePromiseFn>(
   fn: T,
   cacheTime: number = 0,

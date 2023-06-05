@@ -8,7 +8,6 @@
  * ascToHex(); // => ''
  * ascToHex('*+'); // => '2a2b'
  */
-
 export function ascToHex(str: string): string {
   if (!str) {
     return '';

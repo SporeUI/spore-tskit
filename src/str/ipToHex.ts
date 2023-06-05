@@ -7,7 +7,6 @@
  * import { ipToHex } from '@spore-ui/tskit';
  * ipToHex('255.255.255.255'); //return 'ffffffff'
  */
-
 export function ipToHex(ip: string): string {
   return ip.replace(/(\d+)\.*/g, (match, digit) => {
     let num = digit;

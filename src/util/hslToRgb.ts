@@ -14,7 +14,6 @@
  * hslToRgb(0, 0, 1); // => [255,255,255]
  * hslToRgb(0.5555555555555555, 0.9374999999999999, 0.6862745098039216); // => [100,200,250]
  */
-
 function hueToRgb(p: number, q: number, t: number): number {
   let vt = t;
   if (vt < 0) vt += 1;

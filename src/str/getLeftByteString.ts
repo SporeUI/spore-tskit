@@ -1,3 +1,5 @@
+import { byteLength } from './byteLength';
+
 /* eslint-disable no-control-regex */
 /**
  * 从左到右取字符串，中文算两个字符
@@ -10,9 +12,6 @@
  * //向汉编致敬
  * getLeftByteString('世界真和谐', 6); // '世界真'
 */
-
-import { byteLength } from './byteLength';
-
 export function getLeftByteString(str: string, lens: number): string {
   const proxyStr = str.replace(/\*/g, ' ')
     .replace(/[^\x00-\xff]/g, '**');

@@ -10,7 +10,6 @@
  * import { measureDistance } from '@spore-ui/tskit';
  * measureDistance(0, 0, 100, 100); // 9826.40065109978
  */
-
 export function measureDistance(
   lat1: number,
   lng1: number,

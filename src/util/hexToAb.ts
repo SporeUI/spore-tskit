@@ -14,7 +14,6 @@
  * dv.getUint8(0); // => 171
  * dv.getUint8(1); // => 205
  */
-
 export function hexToAb(str: string): ArrayBuffer {
   if (!str) {
     return new ArrayBuffer(0);

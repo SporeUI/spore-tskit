@@ -1,3 +1,5 @@
+const REG_HEX = /(^#?[0-9A-F]{6}$)|(^#?[0-9A-F]{3}$)/i;
+
 /**
  * rgb字符串解析
  * - 返回的 r, g, 和 b 在 [0, 255]之间
@@ -10,9 +12,6 @@
  * parseRGB('#ffffff'); // => [255,255,255]
  * parseRGB('#fff'); // => [255,255,255]
  */
-
-const REG_HEX = /(^#?[0-9A-F]{6}$)|(^#?[0-9A-F]{3}$)/i;
-
 export function parseRGB(color: string): number[] {
   let str = color;
   if (typeof str !== 'string') {

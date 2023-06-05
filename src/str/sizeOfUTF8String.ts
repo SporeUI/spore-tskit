@@ -7,7 +7,6 @@
  * import { sizeOfUTF8String } from '@spore-ui/tskit';
  * sizeOfUTF8String('中文c'); //return 7
 */
-
 export function sizeOfUTF8String(str: string): number {
   const len = str.length;
   let reLen = 0;

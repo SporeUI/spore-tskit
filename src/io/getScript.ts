@@ -1,3 +1,7 @@
+export interface TypeGetScriptOptions {
+  charset?: string;
+}
+
 /**
  * 加载 script 文件
  * @method getScript
@@ -11,11 +15,6 @@
  *   console.info('loaded');
  * });
  */
-
-export interface TypeGetScriptOptions {
-  charset?: string;
-}
-
 export function getScript(
   src: string,
   options?: TypeGetScriptOptions,

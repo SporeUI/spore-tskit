@@ -1,3 +1,5 @@
+import { TypeDate } from '../types';
+
 /**
  * 获取36进制日期字符串
  * @method getTime36
@@ -7,8 +9,6 @@
  * import { getTime36 } from '@spore-ui/tskit';
  * getTime36('2020'); // 'k4ujaio0'
  */
-import { TypeDate } from '../types';
-
 export function getTime36(date?: TypeDate): string {
   const dvalue = date ? new Date(date).getTime() : new Date().getTime();
   return dvalue.toString(36);

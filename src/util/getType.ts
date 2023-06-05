@@ -21,7 +21,6 @@
  * getType(document.getElementsByTagName('div')) // 'htmlcollection'
  * getType(document.getElementsByTagName('div')[0]) // 'htmldivelement'
  */
-
 export function getType(item: unknown) {
   return Object.prototype.toString
     .call(item)

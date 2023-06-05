@@ -1,3 +1,9 @@
+import { TypePlainObject } from '../types';
+
+export type TypeQueryCache = Map<string, TypePlainObject>;
+
+export const queryCache: TypeQueryCache = new Map();
+
 /**
  * 解析 location.search 为一个JSON对象
  * - 或者获取其中某个参数
@@ -13,13 +19,6 @@
  * console.info( getQuery(url, 'beijing') );
  * // 'huanyingni'
  */
-
-import { TypePlainObject } from '../types';
-
-export type TypeQueryCache = Map<string, TypePlainObject>;
-
-export const queryCache: TypeQueryCache = new Map();
-
 export function getQuery(): TypePlainObject;
 export function getQuery(href: string): TypePlainObject;
 export function getQuery(href: string, name: string): string;

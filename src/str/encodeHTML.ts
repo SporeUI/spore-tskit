@@ -8,7 +8,6 @@
  * import { encodeHTML } from '@spore-ui/tskit';
  * encodeHTML(`&<>"\' `); // '&amp;&lt;&gt;&quot;&#39;&#32;'
  */
-
 export function encodeHTML(str: string): string {
   return str.replace(/&/g, '&amp;')
     .replace(/"/g, '&quot;')

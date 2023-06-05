@@ -7,7 +7,6 @@
  * import { decodeHTML } from '@spore-ui/tskit';
  * decodeHTML('&amp;&lt;&gt;&quot;&#39;&#32;'); // '&<>"\' '
  */
-
 export function decodeHTML(str: string): string {
   return str.replace(/&quot;/g, '"')
     .replace(/&lt;/g, '<')

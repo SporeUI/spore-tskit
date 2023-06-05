@@ -7,7 +7,6 @@
  * import { dbcToSbc } from '@spore-ui/tskit';
  * dbcToSbc('ＳＡＡＳＤＦＳＡＤＦ'); // 'SAASDFSADF'
  */
-
 export function dbcToSbc(str: string): string {
   return str.replace(
     (/[\uff01-\uff5e]/g),

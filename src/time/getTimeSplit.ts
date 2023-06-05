@@ -1,3 +1,18 @@
+import { getUTCDate } from './getUTCDate';
+import { TypeDate } from '../types';
+
+const DAY = 24 * 60 * 60 * 1000;
+
+export const TimeUnits = [
+  'hour',
+  'day',
+  'week',
+  'month',
+  'year',
+] as const;
+
+export type TypeTimeUnit = typeof TimeUnits[number];
+
 /**
  * 获取某个时间的 整年|整月|整日|整时|整分 时间对象
  * @method getTimeSplit
@@ -22,21 +37,6 @@
  * ).toGMTString();
  * // Thu Sep 20 2018 19:00:00 GMT+0800 (中国标准时间)
  */
-import { getUTCDate } from './getUTCDate';
-import { TypeDate } from '../types';
-
-const DAY = 24 * 60 * 60 * 1000;
-
-export const TimeUnits = [
-  'hour',
-  'day',
-  'week',
-  'month',
-  'year',
-] as const;
-
-export type TypeTimeUnit = typeof TimeUnits[number];
-
 export function getTimeSplit(
   time: TypeDate,
   type: TypeTimeUnit = 'day',

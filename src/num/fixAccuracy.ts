@@ -10,7 +10,6 @@
  * fixAccuracy(0.1 + 0.2) === 0.3; // true
  * fixAccuracy(0.41 + 0.5) === 0.91 // true
  */
-
 export function fixAccuracy(
   num: number,
   accuracy: number = 10,

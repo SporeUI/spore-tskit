@@ -1,3 +1,5 @@
+import { TypeInterval } from '../types';
+
 /**
  * 包装为一个队列，按设置的时间间隔触发任务函数
  * - 插入队列的所有函数都会执行，但每次执行之间都会有一个固定的时间间隔。
@@ -17,8 +19,6 @@
  *   doSomthing(i);
  * }
  */
-import { TypeInterval } from '../types';
-
 export function setQueue(fn: Function, delay: number): Function {
   let timer: TypeInterval = null;
   const arr: Function[] = [];

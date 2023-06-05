@@ -1,3 +1,5 @@
+import { TypePlainObject } from '../types';
+
 /**
  * 将参数设置到 location.search 上
  * @method setQuery
@@ -17,8 +19,6 @@
  * setQuery('localhost#a=1', {a: 2, b: 3}); // 'localhost?a=2&b=3#a=1'
  * setQuery('#a=1', {a: 2, b: 3}); // '?a=2&b=3#a=1'
  */
-import { TypePlainObject } from '../types';
-
 export function setQuery(href: string, query?: TypePlainObject): string {
   const url = href || '';
   if (!query) { return url; }

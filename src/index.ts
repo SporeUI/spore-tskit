@@ -6,3 +6,4 @@ export * from './str';
 export * from './time';
 export * from './url';
 export * from './util';
+export * from './types';

@@ -9,7 +9,6 @@
  * import { commaFormat } from '@spore-ui/tskit'
  * commaFormat(1234567); // '1,234,567'
  */
-
 export function commaFormat(num: number): string {
   const parts = num.toString().split('.');
   if (parts[0]) {

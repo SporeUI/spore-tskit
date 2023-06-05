@@ -8,7 +8,6 @@
  * $hexToAsc(); // => ''
  * $hexToAsc('2a2b'); // => '*+'
  */
-
 export function hexToAsc(hex: string): string {
   if (!hex) {
     return '';

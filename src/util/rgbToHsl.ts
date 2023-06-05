@@ -14,7 +14,6 @@
  * rgbToHsl(0, 0, 0); // => [0,0,0]
  * rgbToHsl(255, 255, 255); // => [0,0,1]
  */
-
 export function rgbToHsl(
   rv: number,
   gv: number,

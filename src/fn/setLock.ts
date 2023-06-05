@@ -1,3 +1,5 @@
+import { TypeTimeout } from '../types';
+
 /**
  * 包装为触发一次后，预置时间内不能再次触发的函数
  * - 类似于技能冷却。
@@ -13,9 +15,6 @@
  * // 第一次按键，就会触发一次函数调用
  * // 之后连续按键，仅在 500ms 结束后再次按键，才会再次触发事件函数调用
  */
-
-import { TypeTimeout } from '../types';
-
 export function setLock(
   fn: Function,
   delay: number,
