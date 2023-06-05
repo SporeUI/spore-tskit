@@ -9,11 +9,17 @@
 */
 
 export function sizeOfUTF8String(str: string): number {
-  return (
-    typeof Buffer !== 'undefined'
-      ? Buffer.from(str, 'utf8').length
-      : unescape(encodeURIComponent(str)).length
-  );
+  const len = str.length;
+  let reLen = 0;
+  for (let i = 0; i < len; i += 1) {
+    if (str.charCodeAt(i) < 27 || str.charCodeAt(i) > 126) {
+      // 全角
+      reLen += 2;
+    } else {
+      reLen += 1;
+    }
+  }
+  return reLen;
 }
 
 export default sizeOfUTF8String;

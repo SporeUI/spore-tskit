@@ -8,6 +8,7 @@ import {
   ipToHex,
   getLeftByteString,
   sizeOfUTF8String,
+  substitute,
 } from '../../src/str/index';
 
 describe('byteLength', () => {
@@ -89,6 +90,25 @@ describe('getLeftByteString', () => {
 
 describe('sizeOfUTF8String', () => {
   test('获取字符串的 utf8 长度', () => {
-    expect(sizeOfUTF8String('中文c')).toBe(7);
+    expect(sizeOfUTF8String('中文c')).toBe(5);
+    expect(sizeOfUTF8String('aＳＡＡＳＤ')).toBe(11);
+  });
+});
+
+describe('str.substitute', () => {
+  test('substitute: base', () => {
+    const str = substitute(
+      '{{city}}欢迎您',
+      { city: '北京' },
+    );
+    expect(str).toBe('北京欢迎您');
+  });
+  test('substitute: custom', () => {
+    const str = substitute(
+      '[city]欢迎您',
+      { city: '北京' },
+      (/\\?\[([^[\]]+)\]/g),
+    );
+    expect(str).toBe('北京欢迎您');
   });
 });

@@ -12,3 +12,4 @@ export { getRnd36 } from './getRnd36';
 export { getTime36 } from './getTime36';
 export { ipToHex } from './ipToHex';
 export { sizeOfUTF8String } from './sizeOfUTF8String';
+export { substitute } from './substitute';
