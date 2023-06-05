@@ -4,6 +4,12 @@ export type TypeQueryCache = Map<string, TypePlainObject>;
 
 export const queryCache: TypeQueryCache = new Map();
 
+export function getQuery(): TypePlainObject;
+
+export function getQuery(href: string): TypePlainObject;
+
+export function getQuery(href: string, name: string): string;
+
 /**
  * 解析 location.search 为一个JSON对象
  * - 或者获取其中某个参数
@@ -19,9 +25,6 @@ export const queryCache: TypeQueryCache = new Map();
  * console.info( getQuery(url, 'beijing') );
  * // 'huanyingni'
  */
-export function getQuery(): TypePlainObject;
-export function getQuery(href: string): TypePlainObject;
-export function getQuery(href: string, name: string): string;
 export function getQuery(href?: string, name?: string): string | TypePlainObject {
   const url = href || this?.location?.href || '';
   if (!url) {

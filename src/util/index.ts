@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 /**
- * @module 其他工具函数
- * @see https://github.com/SporeUI/spore-tskit/tree/master/src/util
+ * @module ㄖㄧ其他工具函数
+ * @see https://github.com/SporeUI/spore-tskit/tree/main/src/util
  */
 export { abToHex } from './abToHex';
 export { ascToHex } from './ascToHex';

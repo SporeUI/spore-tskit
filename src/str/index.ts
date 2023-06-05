@@ -1,6 +1,6 @@
 /**
- * @module 字符串处理
- * @see https://github.com/SporeUI/spore-tskit/tree/master/src/str
+ * @module ㄖㄧ字符串处理
+ * @see https://github.com/SporeUI/spore-tskit/tree/main/src/str
  */
 export { byteLength } from './byteLength';
 export { dbcToSbc } from './dbcToSbc';
