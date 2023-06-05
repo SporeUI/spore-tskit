@@ -5,7 +5,9 @@ import {
   hexToAb,
   hexToAsc,
   hslToRgb,
+  isLightColor,
   measureDistance,
+  parseRGB,
   rgbToHsl,
 } from '../../src/util/index';
 
@@ -88,6 +90,43 @@ describe('hslToRgb', () => {
   });
 });
 
+describe('isLightColor', () => {
+  test('isLightColor("#ffffff") => true', () => {
+    expect(isLightColor('#ffffff')).toBe(true);
+  });
+  test('isLightColor("#abcdef") => true', () => {
+    expect(isLightColor('#abcdef')).toBe(true);
+  });
+  test('isLightColor("#ff0000") => false', () => {
+    expect(isLightColor('#ff0000')).toBe(false);
+  });
+  test('isLightColor("#000000") => false', () => {
+    expect(isLightColor('#000000')).toBe(false);
+  });
+});
+
+describe('measureDistance', () => {
+  test('measureDistance(0, 0, 100, 100) => 9826.40065109978', () => {
+    const distance = measureDistance(0, 0, 100, 100);
+    expect(distance).toBe(9826.40065109978);
+  });
+});
+
+describe('parseRGB', () => {
+  test('parseRGB("#ffffff") => [255,255,255]', () => {
+    const rgb1 = parseRGB('#ffffff');
+    expect(rgb1.join(',')).toBe('255,255,255');
+  });
+  test('parseRGB("#000") => [0,0,0]', () => {
+    const rgb2 = parseRGB('#000');
+    expect(rgb2.join(',')).toBe('0,0,0');
+  });
+  test('parseRGB("#f00") => [255,0,0]', () => {
+    const rgb2 = parseRGB('#f00');
+    expect(rgb2.join(',')).toBe('255,0,0');
+  });
+});
+
 describe('rgbToHsl', () => {
   test('rgbToHsl(0, 0, 0) => [0,0,0]', () => {
     const hsl = rgbToHsl(0, 0, 0).join();
@@ -112,12 +151,5 @@ describe('rgbToHsl', () => {
       0.6862745098039216,
     ].join();
     expect(hsl).toBe(val);
-  });
-});
-
-describe('measureDistance', () => {
-  test('measureDistance(0, 0, 100, 100) => 9826.40065109978', () => {
-    const distance = measureDistance(0, 0, 100, 100);
-    expect(distance).toBe(9826.40065109978);
   });
 });

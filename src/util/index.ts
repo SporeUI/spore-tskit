@@ -12,3 +12,5 @@ export { hexToAsc } from './hexToAsc';
 export { hslToRgb } from './hslToRgb';
 export { measureDistance } from './measureDistance';
 export { rgbToHsl } from './rgbToHsl';
+export { isLightColor } from './isLightColor';
+export { parseRGB } from './parseRGB';
